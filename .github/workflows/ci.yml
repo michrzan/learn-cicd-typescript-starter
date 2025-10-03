@@ -5,30 +5,30 @@ on:
     branches: [main]
 
 jobs:
-  # tests:
-  #   name: Tests
-  #   runs-on: ubuntu-latest
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Check out code
-  #       uses: actions/checkout@v4
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
 
-  #     - name: Set up Node
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 18
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-  #     - name: Check version
-  #       run: node --version
+      - name: Check version
+        run: node --version
 
-  #     - name: Install dependencies
-  #       run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-  #     - name: Run vitests tests
-  #       run: npm run test -- --coverage
+      - name: Run vitests tests
+        run: npm run test -- --coverage
 
   style:
-    name: Tests
+    name: Style
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -47,4 +47,3 @@ jobs:
       
       - name: Check for Formatting Issues
         run: npm run format:check
-  
